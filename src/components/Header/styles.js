@@ -2,12 +2,17 @@ import styled from 'styled-components/native';
 
 import logo from '../../assets/images/logo.png';
 
-export const Container = styled.View`
+export const Wrapper = styled.SafeAreaView`
   flex-direction: row;
+  flex: 0;
+  background: #000;
+`;
+
+export const Container = styled.View`
   flex: 1;
-  align-items: center;
   justify-content: space-between;
-  margin: auto 15px;
+  flex-direction: row;
+  padding: 20px;
 `;
 
 export const ImageLogo = styled.Image.attrs({
@@ -16,3 +21,5 @@ export const ImageLogo = styled.Image.attrs({
   width: 185px;
   height: 24px;
 `;
+
+export const BasketContainer = styled.TouchableOpacity``;
