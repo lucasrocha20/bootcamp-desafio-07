@@ -2,32 +2,32 @@ import styled from 'styled-components/native';
 import { darken } from 'polished';
 
 export const Container = styled.View`
-  margin: 70px auto auto;
-  background: #222;
+  background: #000;
 `;
 
 export const ItemContainer = styled.View`
-  width: 300px;
-  height: 450px;
+  width: 220px;
   background: #fff;
-  margin: 15px 30px 200px 30px;
-  padding: 15px;
+  padding: 10px;
+  margin: 15px;
   border-radius: 4px;
 `;
 
 export const ImageProducts = styled.Image`
-  flex: 1px;
+  height: 200px;
+  width: 200px;
 `;
 
 export const ProductTitle = styled.Text`
-  font-size: 20px;
+  font-size: 16px;
   color: #333;
 `;
 
 export const ProductPrice = styled.Text`
-  font-size: 25px;
+  margin: 14px 0;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 `;
 
 export const AddButton = styled.TouchableOpacity`
