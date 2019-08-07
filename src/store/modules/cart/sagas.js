@@ -1,8 +1,8 @@
 import { call, select, put, all, takeLatest } from 'redux-saga/effects';
-import { Alert } from 'react-native';
+import { ToastAndroid } from 'react-native';
 import api from '../../../services/api';
 import { formatPrice } from '../../../util/format';
-import { NavigationService } from '../../../services/navigation';
+import NavigationService from '../../../services/navigation';
 import { addToCartSucess, updateAmountSucess } from './actions';
 
 function* addToCart({ id }) {
@@ -18,7 +18,10 @@ function* addToCart({ id }) {
   const amount = currentAmount + 1;
 
   if (amount > stockAmount) {
-    Alert.alert('Quantidade solicitada fora de estoque');
+    ToastAndroid.show(
+      'Quantidade solicitada não disponível',
+      ToastAndroid.SHORT
+    );
     return;
   }
 
@@ -46,7 +49,10 @@ function* updateAmount({ id, amount }) {
   const stockAmount = stock.data.amount;
 
   if (amount > stockAmount) {
-    Alert.alert('Quantidade solicitada fora de estoque');
+    ToastAndroid.show(
+      'Quantidade solicitada não disponível',
+      ToastAndroid.SHORT
+    );
     return;
   }
 
