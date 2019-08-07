@@ -2,8 +2,8 @@ import { NavigationActions } from 'react-navigation';
 
 let navigator;
 
-function setNavigator(navigatorRef) {
-  navigator = navigatorRef;
+function setNavigator(ref) {
+  navigator = ref;
 }
 
 function navigate(routeName, params) {
@@ -16,6 +16,6 @@ function navigate(routeName, params) {
 }
 
 export default {
-  setNavigator,
   navigate,
+  setNavigator,
 };
