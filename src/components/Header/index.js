@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
@@ -26,6 +27,13 @@ function Header({ navigation, cartSize }) {
     </Wrapper>
   );
 }
+
+Header.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }).isRequired,
+  cartSize: PropTypes.func.isRequired,
+};
 
 export default connect(state => ({
   cartSize: state.cart.length,
